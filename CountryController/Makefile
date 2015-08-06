@@ -21,13 +21,19 @@
 # List application Arduino/chipKIT/Digispark/Energia/Maple/Microduino/Teensy/Wiring libraries here
 # default = 0 = none
 #
-APP_LIBS_LIST = 0
+# ARDUINO = EEPROM SoftwareSerial SPI Wire Bridge Esplora 
+#	Ethernet Firmata GSM LiquidCrystal Robot_Control Robot_Motor 
+#	RobotIRremote SD Servo SpacebrewYun Stepper Temboo TFT WiFi 
+#
+APP_LIBS_LIST = SPI stdarg
 
-# List user's libraries here 
+# List user's libraries here
 # default = 0 = none
 #
-USER_LIBS_LIST = 0
+#
+USER_LIBS_LIST = MySensors
 
+#USER_LIBS_LIST = MySensors/MySigningNone.h MySensors/MyTransportRFM69.h MySensors/MyTransportNRF24.h MySensors/MyHwATMega328.h MySensors/MySigningAtsha204Soft.h #MySensors/MySigningAtsha204.h MySensors/MyParserSerial.h MySensors/MySensor.h  MySensors/utility/PinChangeInt.h
 # List core, application and user's libraries to be excluded
 # For example, WiFi may crash on Arduino 1.0.2, Esplora on Arduino 1.0.3, Firmata on Teensy 3.0,
 #   OneWire on MPIDE 0023, HardwareSerial may conflict with MarlinSerial
@@ -59,7 +65,7 @@ USER_LIBS_LIST = 0
 # SERIAL_BAUDRATE for the serial console, 9600 by default
 # Uncomment and specify another speed
 #
-#SERIAL_BAUDRATE = 115200
+SERIAL_BAUDRATE = 115200
 
 
 # Miscellaneous
@@ -77,4 +83,5 @@ MAKEFILE_PATH  = $(CURRENT_DIR)/Makefiles
 UTILITIES_PATH = $(CURRENT_DIR)/Utilities
 
 include $(MAKEFILE_PATH)/Step1.mk
+
 
