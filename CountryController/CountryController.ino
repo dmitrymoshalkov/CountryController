@@ -130,6 +130,7 @@ void setup()
     // Add interrupt for inclusion button to pin
     PCintPort::attachInterrupt(pinInclusion, startInclusionInterrupt, RISING);
     
+    wdt_enable(WDTO_8S);
     
     // Send startup log message on serial
     serial(PSTR("0;0;%d;0;%d;Gateway startup complete.\n"),  C_INTERNAL, I_GATEWAY_READY);
@@ -149,6 +150,8 @@ void loop()
         commandComplete = false;
         inputPos = 0;
     }
+    
+    wdt_reset();
 }
 
 
